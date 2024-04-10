@@ -10,9 +10,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
  * Choose between Browser chrome or edge to init a new automation using enviroment variable
  */
 public class DriverUtil {
-
+    public static WebDriver driver = null;
     public static WebDriver setUp() {
-        WebDriver driver = null;
+
         final String browser = System.getenv("envBrowser");
         String url = "https://www.demoblaze.com/";
 
@@ -43,5 +43,9 @@ public class DriverUtil {
         }
 
 
+    }
+
+    public static WebDriver getDriver(){
+        return driver;
     }
 }

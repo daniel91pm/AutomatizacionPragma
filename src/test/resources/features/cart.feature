@@ -12,7 +12,7 @@ Feature: add to cart
       | strUsername | strPassword | strItem     | strAdded       |
       | Danip123    | 123Dan      | Macbook Pro | Product added. |
 
-  @Cart @Ignore
+  @Cart
   Scenario Outline: user delete an item
     Given user enters credential to login <strUsername> with <strPassword>
     When user add <strItem> to the cart

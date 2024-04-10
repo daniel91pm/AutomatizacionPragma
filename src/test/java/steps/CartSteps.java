@@ -1,10 +1,9 @@
 package steps;
 
-import interaction.Accept;
+import interaction.AcceptAlert;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.GivenWhenThen;
-import net.serenitybdd.screenplay.actions.SwitchToNewWindow;
 import org.hamcrest.Matchers;
 import questions.AnswerItemAdded;
 import tasks.AddItemToCart;
@@ -35,11 +34,10 @@ public class CartSteps {
 
     /**
      * This goes to the cart
-     *
      */
     @When("user go to the Cart")
     public void userGoToTheCart() {
-        theActorInTheSpotlight().attemptsTo(Accept.alert());
+        theActorInTheSpotlight().attemptsTo(AcceptAlert.alert());
         theActorInTheSpotlight().attemptsTo(GoTo.theCart());
     }
 

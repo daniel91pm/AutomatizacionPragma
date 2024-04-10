@@ -48,7 +48,7 @@ public class DemoblazePage extends PageObject {
             .located(By.xpath("//a[contains(text(),'Add to cart')]"));
 
     public static final Target BUTTON_CART = Target.the("identify cart")
-            .located(By.xpath("//a[@id='cartur'"));
+            .located(By.xpath("//a[@id='cartur']"));
 
     public static final Target DELETE_ITEM = Target.the("identify deltes button ")
             .located(By.xpath("//a[contains(text(),'Delete')]"));

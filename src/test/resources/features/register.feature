@@ -7,17 +7,26 @@ Feature: Register
   @Register @Ignore
   Scenario Outline: user register successfully
     When user enters <strUsername> and <strPassword>
-    Then user see <strLogin> message
+    Then user see <strMessage> message
 
     Examples:
-      | strUsername | strPassword | strLogin            |
-      | Daniww123    | 123Dan      | Sign up successful. |
+      | strUsername | strPassword | strMessage            |
+      | Daniww123   | 123Dan      | Sign up successful. |
 
   @Register
-  Scenario Outline: user register unsuccessfully
+  Scenario Outline: user register already exist
     When user enters <strUsername> and <strPassword>
-    Then user see <strLoginFailed> message
+    Then user see <strMessage> message
 
     Examples:
-      | strUsername | strPassword | strLoginFailed           |
+      | strUsername | strPassword | strMessage          |
       | Danio123    | 123Dan      | This user already exist. |
+
+  @Register
+  Scenario Outline: user register fill the blanks
+    When user enters <strUsername> and <strPassword>
+    Then user see <strMessage> message
+
+    Examples:
+      | strUsername | strPassword | strMessage                           |
+      |             | 123Dan      | Please fill out Username and Password. |
